@@ -1,0 +1,73 @@
+<!-- ******CHALLENGES****** -->
+<section id="challenges" class="story section has-pattern">
+    <div class="container">
+        <div class="row">
+            <div class="content col-md-7 col-sm-7 col-xs-12">
+                <h2 class="title">[topcoder] Challenges & Leaders</h2>
+                <p>[topcoder] is the world’s largest platform for digital open innovation. We provide the platform and community of over 600,000 global members to accelerate the development of new digital products and services for our clients.</p>
+                {{#if challenges}}
+                  <table class="table">
+                  <tr>
+                      <th>Challenge</th>
+                      <th>Deadline</th>
+                      <th nowrap>Total Prizes</th>
+                  </tr>
+                  {{#each challenges}}
+                  <tr>
+                      <td><a href="http://www.topcoder.com/challenge-details/{{_source.challengeId}}?type={{_type}}" class="white-link" style="text-decoration:underline" target="_blank">{{_source.challengeName}}</a>
+                        <span class="small">
+                        {{#if _source.technologies}}<br/>Technologies: {{arrayToList _source.technologies}}{{/if}}
+                        {{#if _source.platforms}}<br/>Platforms: {{arrayToList _source.platforms}}{{/if}}
+                        <br/>Registrants: {{_source.numRegistrants}} &nbsp;&nbsp;&nbsp;Submissions: {{_source.numSubmissions}}
+                        </span>
+                      </td>
+                      <td>{{dateFormatUTC _source.submissionEndDate}} UTC</td>
+                      <td>${{_source.totalPrize}}</td>
+                  </tr>
+                  {{/each}}
+                  </table>
+                {{else}}
+                  <h1>Challenges will be starting shortly! Check back for your chance to compete, learn and win!</h1>
+                {{/if}}
+            </div><!--//challenges-->
+
+            <div class="team col-md-4 col-sm-4 col-md-offset-1 col-sm-offset-1 col-xs-12">
+                {{#if leaderboard}}
+                  {{#each leaderboard}}
+                    <div class="row">
+                        <div class="member col-md-6 text-center">
+                            <a href="http://www.topcoder.com/member-profile/{{left.handle}}" target="_blank"><img class="img-circle" src="{{left.pic}}" alt="{{left.handle}}"  height="125"/></a>
+                            <p class="name">{{left.handle}}</p>
+                            <p class="title">{{ordinal left.rank}} with {{left.score}} pts</p>
+                        </div><!--//member-->
+                        {{#if right}}
+                          <div class="member col-md-6 text-center">
+                              <a href="http://www.topcoder.com/member-profile/{{right.handle}}" target="_blank"><img class="img-circle" src="{{right.pic}}" alt="<%= right.handle %>" height="125" /></a>
+                              <p class="name">{{right.handle}}</p>
+                              <p class="title">{{ordinal right.rank}} with {{right.score}} pts!!</p>
+                          </div><!--//member-->
+                        {{/if}}
+                    </div>
+                  {{/each}}
+
+                {{else}}
+                  <p style="padding-top:50px">No results on the leaderboard at this time. Once challenges finish up the results will be posted to the leaderboard so please check back and see who climbs to the top!</p>
+
+                  <div class="row">
+                      <div class="member col-md-6 text-center">
+                          <img class="img-circle" src="http://community.topcoder.com/i/m/mahestro.jpeg" alt="" />
+                          <p class="name">YOU!</p>
+                          <p class="title">1st with 1000 pts</p>
+                      </div><!--//member-->
+                      <div class="member col-md-6 text-center">
+                          <img class="img-circle" src="http://community.topcoder.com/i/m/CoralBlue.jpeg" alt="" />
+                          <p class="name">YOUR FRIEND!</p>
+                          <p class="title">2nd with 500  pts</p>
+                      </div><!--//member-->
+                  </div>
+                {{/if}}
+            </div><!--//leaderboard-->
+
+        </div><!--//row-->
+    </div><!--//container-->
+</section><!--//story-->

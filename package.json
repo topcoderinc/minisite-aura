@@ -1,0 +1,22 @@
+{
+  "name": "minisite-tempalte",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "express-handlebars": "*",
+    "lodash": "~2.4.1",
+    "moment": "~2.6.0",
+    "request": "~2.34.0",
+    "rss": "~0.3.2",
+    "feed": "~0.2.6"
+  }
+}
