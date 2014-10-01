@@ -13,9 +13,9 @@ var moment = require('moment');
 var RSS = require('rss');
 
 // config settings for the minisite
-var challengesEndpoint = process.env.CHALLENGES_ENDPOINT ||  "http://tc-search.herokuapp.com/challenges/v2/search?q=challengeName:IDOL";
+var challengesEndpoint = process.env.CHALLENGES_ENDPOINT ||  "http://tc-search.herokuapp.com/challenges/v2/search?q=challengeName:Swiftlang";
 var leaderboardEndpoint = process.env.LEADERBOARD_ENDPOINT || "http://tc-leaderboard.herokuapp.com/demo";
-var communityName = process.env.COMMUNITY_NAME || "Community Template";
+var communityName = process.env.COMMUNITY_NAME || "Aura";
 // don't show challenges with the follow statuses
 var challengeFilter = ['Completed','Cancelled - Zero Submissions'];
 
