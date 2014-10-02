@@ -59,6 +59,68 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
+function mockChallenges() {
+
+  function add(name, amount) {
+
+    var platforms = ['Salesforce'];
+    var technologies = ['Aura', 'Apex', 'JavaScript'];
+    var today = new Date();
+
+    return {
+      _type: 'develop',
+      _source: {
+        challengeId: 0,
+        challengeName: name,
+        platforms: platforms,
+        technologies: technologies,
+        totalPrize: amount,
+        numRegistrants: Math.floor((Math.random() * 10) + 1),
+        numSubmissions: Math.floor((Math.random() * 3) + 1),
+        submissionEndDate: today.setDate(today.getDate() + Math.floor((Math.random() * 10) + 1))
+      }
+    };
+
+  }
+
+  var challenges = [];
+  challenges.push(add('Hello Aura!! Build Your First Aura Component', 100));
+  challenges.push(add('Lazy Loading Data TreeView App', 1000));
+  challenges.push(add('Lead Conversion App', 1000));
+  challenges.push(add('Customizable Grid w/search, sorting & pagination', 750));
+  challenges.push(add('Org Chart Visualizer App', 1000));
+  challenges.push(add('Find Duplicate Records App', 1000));
+  challenges.push(add('File Upload App', 1000));
+  challenges.push(add('Drag n Drop Record Selector App', 1000));
+  challenges.push(add('Month, Week & Day Calendar App', 2000));
+  challenges.push(add('Typeahead Input Field', 300));
+  challenges.push(add('Combobox with Filtering', 300));
+  challenges.push(add('Image List Viewer App', 500));
+  challenges.push(add('Range Selection DatePicker', 500));
+  challenges.push(add('Share on Social Media', 350));
+  challenges.push(add('Drag n Drop Sortable List', 250));
+  challenges.push(add('Range Selection DateTimePicker', 500));
+  challenges.push(add('Cascading (Dependent) Combobox', 300));
+  challenges.push(add('Progress Bar', 250));
+  challenges.push(add('MaskedText Input Field', 250));
+  challenges.push(add('MultiSelect Input Field with Filtering', 500));
+  challenges.push(add('Range Bounded Spinner', 250));
+  challenges.push(add('Multiselect Calendar', 250));
+  challenges.push(add('Range Bounded Slider', 350));
+  challenges.push(add('TabStrip', 250));
+  challenges.push(add('Image Coverflow', 250));
+  challenges.push(add('Range Bounded Editable Dial', 500));
+  challenges.push(add('Growl Notifications', 500));
+  challenges.push(add('Tooltip', 250));
+  challenges.push(add('Toggle True/False Button', 250));
+  challenges.push(add('Captcha', 350));
+  challenges.push(add('Analog/Digital Clock Datetime', 350));
+  challenges.push(add('Modal', 250));
+
+  return challenges;
+
+}
+
 // fetches a list of challenges as json and exposes it to the ejs
 var challenges = function(req, res, next) {
   request(challengesEndpoint, function (error, response, body) {
@@ -70,7 +132,7 @@ var challenges = function(req, res, next) {
           challenges.push(c);
         }
       });
-      req.challenges = challenges;
+      req.challenges = mockChallenges();
     } else {
       req.challenges = [];
     }
