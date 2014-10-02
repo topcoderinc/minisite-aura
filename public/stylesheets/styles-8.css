@@ -1,4 +1,4 @@
-/*   
+/*
  * Template Name: Delta - Responsive Website Template for mobile app
  * Version: 1.0
  * Author: 3rd Wave Media
@@ -8,6 +8,13 @@
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #444444;
+}
+.white-link {
+  color:white;
+}
+.white-link-underlined {
+  color:white;
+  text-decoration: underline;
 }
 a {
   color: #de5a6a;
@@ -126,7 +133,7 @@ blockquote {
   text-transform: uppercase;
 }
 .offset-header {
-  padding-top: 90px;
+  padding-top: 125px;
 }
 .has-pattern {
   background-image: url('../images/patterns/pattern-1.png');
