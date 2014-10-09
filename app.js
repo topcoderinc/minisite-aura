@@ -16,7 +16,7 @@ var wwwhisper = require('connect-wwwhisper');
 // config settings for the minisite
 var challengesEndpoint = process.env.CHALLENGES_ENDPOINT ||  "http://tc-search.herokuapp.com/challenges/v2/search?q=challengeName:Swiftlang";
 var leaderboardEndpoint = process.env.LEADERBOARD_ENDPOINT || "http://tc-leaderboard.herokuapp.com/demo";
-var communityName = process.env.COMMUNITY_NAME || "Aura";
+var communityName = process.env.COMMUNITY_NAME || "Lightning";
 // don't show challenges with the follow statuses
 var challengeFilter = ['Completed','Cancelled - Zero Submissions'];
 
@@ -64,7 +64,7 @@ function mockChallenges() {
   function add(name, amount) {
 
     var platforms = ['Salesforce'];
-    var technologies = ['Aura', 'Apex', 'JavaScript'];
+    var technologies = ['Lightning', 'Apex', 'JavaScript'];
     var today = new Date();
 
     return {
@@ -84,7 +84,7 @@ function mockChallenges() {
   }
 
   var challenges = [];
-  challenges.push(add('Hello Aura!! Build Your First Aura Component', 100));
+  challenges.push(add('Hello Lightning!! Build Your First Lightning Component', 100));
   challenges.push(add('Lazy Loading Data TreeView App', 1000));
   challenges.push(add('Lead Conversion App', 1000));
   challenges.push(add('Customizable Grid w/search, sorting & pagination', 750));
