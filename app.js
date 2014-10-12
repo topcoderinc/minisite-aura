@@ -14,8 +14,8 @@ var RSS = require('rss');
 var wwwhisper = require('connect-wwwhisper');
 
 // config settings for the minisite
-var challengesEndpoint = process.env.CHALLENGES_ENDPOINT ||  "http://tc-search.herokuapp.com/challenges/v2/search?q=challengeName:Swiftlang";
-var leaderboardEndpoint = process.env.LEADERBOARD_ENDPOINT || "http://tc-leaderboard.herokuapp.com/demo";
+var challengesEndpoint = process.env.CHALLENGES_ENDPOINT ||  "http://tc-search.herokuapp.com/challenges/v2/search?q=technologies:Lightning";
+var leaderboardEndpoint = process.env.LEADERBOARD_ENDPOINT || "http://tc-leaderboard.herokuapp.com/lightning";
 var communityName = process.env.COMMUNITY_NAME || "Lightning";
 // don't show challenges with the follow statuses
 var challengeFilter = ['Completed','Cancelled - Zero Submissions'];
@@ -87,36 +87,6 @@ function mockChallenges() {
   challenges.push(add('Hello Lightning!! Build Your First Lightning Component', 100));
   challenges.push(add('Lazy Loading Data TreeView App', 1000));
   challenges.push(add('Lead Conversion App', 1000));
-  challenges.push(add('Customizable Grid w/search, sorting & pagination', 750));
-  challenges.push(add('Org Chart Visualizer App', 1000));
-  challenges.push(add('Find Duplicate Records App', 1000));
-  challenges.push(add('File Upload App', 1000));
-  challenges.push(add('Drag n Drop Record Selector App', 1000));
-  challenges.push(add('Month, Week & Day Calendar App', 2000));
-  challenges.push(add('Typeahead Input Field', 300));
-  challenges.push(add('Combobox with Filtering', 300));
-  challenges.push(add('Image List Viewer App', 500));
-  challenges.push(add('Range Selection DatePicker', 500));
-  challenges.push(add('Share on Social Media', 350));
-  challenges.push(add('Drag n Drop Sortable List', 250));
-  challenges.push(add('Range Selection DateTimePicker', 500));
-  challenges.push(add('Cascading (Dependent) Combobox', 300));
-  challenges.push(add('Progress Bar', 250));
-  challenges.push(add('MaskedText Input Field', 250));
-  challenges.push(add('MultiSelect Input Field with Filtering', 500));
-  challenges.push(add('Range Bounded Spinner', 250));
-  challenges.push(add('Multiselect Calendar', 250));
-  challenges.push(add('Range Bounded Slider', 350));
-  challenges.push(add('TabStrip', 250));
-  challenges.push(add('Image Coverflow', 250));
-  challenges.push(add('Range Bounded Editable Dial', 500));
-  challenges.push(add('Growl Notifications', 500));
-  challenges.push(add('Tooltip', 250));
-  challenges.push(add('Toggle True/False Button', 250));
-  challenges.push(add('Captcha', 350));
-  challenges.push(add('Analog/Digital Clock Datetime', 350));
-  challenges.push(add('Modal', 250));
-
   return challenges;
 
 }
