@@ -59,38 +59,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-function mockChallenges() {
-
-  function add(name, amount) {
-
-    var platforms = ['Salesforce'];
-    var technologies = ['Lightning', 'Apex', 'JavaScript'];
-    var today = new Date();
-
-    return {
-      _type: 'develop',
-      _source: {
-        challengeId: 0,
-        challengeName: name,
-        platforms: platforms,
-        technologies: technologies,
-        totalPrize: amount,
-        numRegistrants: Math.floor((Math.random() * 10) + 1),
-        numSubmissions: Math.floor((Math.random() * 3) + 1),
-        submissionEndDate: today.setDate(today.getDate() + Math.floor((Math.random() * 10) + 1))
-      }
-    };
-
-  }
-
-  var challenges = [];
-  challenges.push(add('Hello Lightning!! Build Your First Lightning Component', 100));
-  challenges.push(add('Lazy Loading Data TreeView App', 1000));
-  challenges.push(add('Lead Conversion App', 1000));
-  return challenges;
-
-}
-
 // fetches a list of challenges as json and exposes it to the ejs
 var challenges = function(req, res, next) {
   request(challengesEndpoint, function (error, response, body) {
@@ -102,7 +70,7 @@ var challenges = function(req, res, next) {
           challenges.push(c);
         }
       });
-      req.challenges = mockChallenges();
+      req.challenges = challenges;
     } else {
       req.challenges = [];
     }
