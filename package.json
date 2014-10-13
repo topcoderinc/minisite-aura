@@ -17,7 +17,6 @@
     "morgan": "~1.0.0",
     "request": "~2.34.0",
     "rss": "~0.3.2",
-    "static-favicon": "~1.0.0",
-    "connect-wwwhisper": "*"
+    "static-favicon": "~1.0.0"
   }
 }
