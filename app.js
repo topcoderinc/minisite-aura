@@ -11,7 +11,6 @@ var _ = require("lodash");
 var request = require('request');
 var moment = require('moment');
 var RSS = require('rss');
-var wwwhisper = require('connect-wwwhisper');
 
 // config settings for the minisite
 var challengesEndpoint = process.env.CHALLENGES_ENDPOINT ||  "http://tc-search.herokuapp.com/challenges/v2/search?q=technologies:Lightning";
@@ -46,10 +45,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('port', port);
-
-// wwwhisper
-app.use(wwwhisper());
-// app.use(wwwhisper(false));
 
 app.use(favicon());
 app.use(logger('dev'));
